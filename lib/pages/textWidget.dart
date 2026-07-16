@@ -96,6 +96,97 @@ class _TextWidgetState extends State<TextWidget> {
           ),
 
           //======================================================================================================================================================= 
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 350,
+                padding: EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFFBABECC),
+                      offset: Offset(10, 10),
+                      blurRadius: 25
+                    ),
+
+                    BoxShadow(
+                      color: Color(0xFFBABECC),
+                      offset: Offset(-10, -10),
+                      blurRadius: 25
+                    )
+                  ]
+                ),
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: DataTable(
+                        columns: [
+                          DataColumn(
+                            label: Text('Task')
+                          ),
+
+                          DataColumn(
+                            label: Text('Action')
+                          )
+                        ],
+
+                        rows: [
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text('data')
+                              ),
+
+                              DataCell(
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        print("Edit");
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.amber,
+                                        foregroundColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: const Text("Edit"),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        print("Delete");
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.red,
+                                        foregroundColor: Colors.white,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: const Text("Delete"),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ]
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
           
           ElevatedButton(
             onPressed: () => Navigator.push(

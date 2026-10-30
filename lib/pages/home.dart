@@ -152,8 +152,7 @@ class _HomeState extends State<Home> {
                       scrollDirection: Axis.horizontal,
                       child: DataTable(
                         headingRowHeight: 50,
-                        headingRowColor:
-                            WidgetStateProperty.all(Colors.black),
+                        headingRowColor: WidgetStateProperty.all(Colors.black),
                         columns: const [
                           DataColumn(
                             label: Center(
